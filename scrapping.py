@@ -6,13 +6,10 @@ toaster = ToastNotifier()
 
 
 class Covid():
-    '''Project helper class'''
-
-    def fetch_data(self):
+    '''Covid 19 data helper helper class'''
+    def check_all_countries(self):
         response = requests.get("https://disease.sh/v3/covid-19/countries")
         countries = json.loads(response.text)
-        number_of_countries = len(countries)
-        print(number_of_countries)
         for i in range(len(countries)):
             print(countries[i]['country'])
 
@@ -22,6 +19,7 @@ class Covid():
             response = requests.get('https://disease.sh/v3/covid-19/countries')
         except:
             print("Error, Something went wrong")
+            
         country_found = False
         countries = json.loads(response.text)
         for i in range(len(countries)):
