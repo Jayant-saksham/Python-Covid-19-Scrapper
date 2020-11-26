@@ -304,6 +304,11 @@ if __name__ == "__main__":
             top = stackObject.top()
             print(top)
             print(f"Probability is {top/10}")
+            toaster.show_toast(
+                "Probability is",
+                f"{top/10}",
+                duration=4
+            )
             
         else:
             print("Exiting....")
